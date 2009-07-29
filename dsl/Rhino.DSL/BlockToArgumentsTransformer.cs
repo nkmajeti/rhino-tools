@@ -44,12 +44,12 @@ namespace Rhino.DSL
 			if (Array.Exists(methods,
 							 delegate(string name) { return name.Equals(node.Name); }))
 			{
-				if (node.Block != null)
+				if (node.Body != null)
 				{
-					Expression[] expressions = GetExpressionsFromBlock(node.Block);
+					Expression[] expressions = GetExpressionsFromBlock(node.Body);
 					foreach (Expression expression in expressions)
 						node.Arguments.Add(expression);
-					node.Block.Clear();
+					node.Body.Clear();
 				}
 			}
 			base.OnMacroStatement(node);
@@ -86,7 +86,7 @@ namespace Rhino.DSL
 							// transform it into a block expression and pass that as the last argument                     
 							// to the method invocation.
 							BlockExpression be = new BlockExpression(macroStatement.LexicalInfo);
-							be.Body = macroStatement.Block.CloneNode();
+							be.Body = macroStatement.Body.CloneNode();
 
 							mie.Arguments.Add(be);
 						}
