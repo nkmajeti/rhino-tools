@@ -3,7 +3,7 @@ using Rhino.Etl.Core.Operations;
 
 namespace Rhino.Etl.Core.ConventionOperations
 {
-	/// <summary>Convertion wrapper around the <see cref="SqlBulkInsertOperation"/>.</summary>
+	/// <summary>Convention wrapper around the <see cref="SqlBulkInsertOperation"/>.</summary>
 	public class ConventionSqlBulkInsertOperation : SqlBulkInsertOperation
 	{
 		/// <summary>Creates a new <see cref="ConventionSqlBulkInsertOperation"/></summary>
